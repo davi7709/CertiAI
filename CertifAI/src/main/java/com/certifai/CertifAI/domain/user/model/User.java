@@ -1,4 +1,4 @@
-package com.certifai.CertifAI.domain.users;
+package com.certifai.CertifAI.domain.user.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
