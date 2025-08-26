@@ -2,9 +2,11 @@ package com.certifai.CertifAI.domain.user.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
-
+@NoArgsConstructor
 @Entity
 @Table(name="users")
 public class User {
@@ -65,14 +67,14 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User user)) return false;
-        return Objects.equals(getEmail(), user.getEmail());
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getEmail());
+        return Objects.hashCode(id);
     }
 }
 
